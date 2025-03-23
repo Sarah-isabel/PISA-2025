@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+   <title>TextArea n5a</title>
+
+   <script type="text/javascript">
+      
+
+      window.onload = function(evt) {
+       
+		
+		var ct = document.getElementById("n5a");
+        // cuando el campo de texto cambia, es decir hay un enter, entonces se envia el valor al padre y se realiza una actualizacion
+        ct.addEventListener("change", function(evt) {
+          window.parent.postMessage({ type: "set", name: "ta5a", value: this.value }, '*');
+          window.parent.postMessage({ type: "update" }, '*');
+        });
+      }
+
+   </script>
+<link href="paraenvio.css" rel="stylesheet" type="text/css">
+</head>
+<body BGCOLOR="ffffff" topmargin="0" leftmargin="0">
+
+<div align="center">
+<textarea name="n5a" cols="46" rows="6" id="n5a" class="textonormal">
+</textarea>
+</div>
+</body>
+</html>
